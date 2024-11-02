@@ -1,0 +1,18 @@
+# Ignora els fitxers compilats de Python
+*.pyc
+__pycache__/
+
+# Ignora els entorns virtuals
+/env/
+/venv/
+
+# Ignora fitxers i carpetes específiques d'static i media
+/static/*
+/media/*
+
+# Ignora fitxers de configuració i base de dades
+.env
+db.sqlite3
+
+# Ignora fitxers de cobertura de proves
+.coverage
