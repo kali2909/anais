@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
     strategy:
       max-parallel: 4
@@ -27,10 +26,11 @@ jobs:
       - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          pip install -r requirements.txt 
 
       - name: Run Tests
         env:
-          MOZ_HEADLESS: 1  # Executa els tests en mode headless
+          MOZ_HEADLESS: 1  # Ejecuta los tests en modo headless
         run: |
           python manage.py test
+     python manage.py test
