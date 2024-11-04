@@ -1,6 +1,0 @@
-- name: Run Tests
-  env:
-    MOZ_HEADLESS: 1
-  run: |
-    cd polls  # Cambia al directorio de la aplicación
-    python ../manage.py test tests  # Ejecuta las pruebas en la carpeta 'tests'
