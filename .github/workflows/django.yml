@@ -17,14 +17,24 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+    
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run Tests
+
+    - name: Install Firefox and geckodriver (for Selenium)
       run: |
-        MOZ_HEADLESS=1 python manage.py test
+        sudo apt-get update
+        sudo apt-get install -y firefox-geckodriver
+
+    - name: Run Tests
+      env:
+        MOZ_HEADLESS: 1  # Activar Firefox en modo headless
+      run: |
+        python manage.py test
